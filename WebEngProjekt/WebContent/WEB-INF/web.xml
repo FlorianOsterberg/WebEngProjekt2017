@@ -3,8 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="webeng04.frame" version="3.0">
-	<display-name>"webeng04.frame"</display-name>
+	id="helloJSF" version="3.0">
+	<display-name>"helloJSF"</display-name>
 
  	<servlet>
 		<servlet-name>H2Console</servlet-name>
@@ -24,8 +24,31 @@
 		<url-pattern>/console/*</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>org.apache.myfaces.webapp.MyFacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+		
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<listener>
+	     <listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
+	 </listener>
+	
 	<welcome-file-list>
+		
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
@@ -35,7 +58,11 @@
 	</welcome-file-list>
 	<context-param>
 		<param-name>db.url</param-name>
-		<param-value>jdbc:h2:./build/WebEng04DB</param-value>
+		<param-value>jdbc:h2:./build/WebEng07DB</param-value>
+	</context-param>
+	<context-param>
+		<param-name>test</param-name>
+		<param-value>123</param-value>
 	</context-param>
 	<context-param>
 		<param-name>db.user</param-name>
@@ -52,4 +79,5 @@
 	<listener>
 	    <listener-class>org.h2.server.web.DbStarter</listener-class>
 	</listener>
+	
 </web-app>
