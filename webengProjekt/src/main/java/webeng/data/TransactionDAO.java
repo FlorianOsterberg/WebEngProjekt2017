@@ -1,5 +1,13 @@
 package webeng.data;
 
-public class TransactionDAO {
+import java.util.List;
 
+import webeng.transferobjects.Transaction;
+
+public interface TransactionDAO {
+
+	public void addTransaction(Transaction transaction);
+	public Transaction getTransaction(Transaction transaction);
+	public List<Transaction> findTransactions();
+	
 }
