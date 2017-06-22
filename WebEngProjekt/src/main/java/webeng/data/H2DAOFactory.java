@@ -54,6 +54,14 @@ public class H2DAOFactory extends DAOFactory {
 	public ProductDAO getProductDAO() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+	@Override
+	public TransactionDAO getTransactionDAO() {
+		// TODO Auto-generated method stub
+		return null;
 	} 
 	
 }//end class H2DAOFactory

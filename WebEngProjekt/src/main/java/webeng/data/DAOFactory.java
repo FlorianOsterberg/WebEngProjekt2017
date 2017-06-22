@@ -12,6 +12,7 @@ public abstract class DAOFactory {
 	// implement these methods.
 	public abstract ProductDAO getProductDAO();
 	public abstract UserDAO getUserDAO();
+	public abstract TransactionDAO getTransactionDAO();
 
 	public static DAOFactory getDAOFactory(Backend whichFactory) {
 		switch (whichFactory) {
