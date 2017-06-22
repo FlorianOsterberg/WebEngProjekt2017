@@ -25,4 +25,26 @@ public class ProductManager {
 	public List<Product> getProducts() {
 		return productDAO.getProducts();
 	}
+	
+	public void deleteProduct(int id){
+		
+		Product product = new Product(id, null, 0, null, null);
+		productDAO.deleteProduct(product);
+	}
+	
+	public void updateProduct(Product product) {
+		productDAO.updateProduct(product);
+	}
+	
+	public List<Product> findProductsByName(String product) {
+		return productDAO.findProductsByName(product);
+	}
+	
+	public List<Product> findProductsByCategory(String product, String category) {
+		return productDAO.findProductsByCategory(product, category);
+	}
+	
+	public List<String> getAllCategories() {
+		return getAllCategories();
+	}
 }
