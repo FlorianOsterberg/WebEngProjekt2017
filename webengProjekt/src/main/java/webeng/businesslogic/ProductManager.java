@@ -36,8 +36,8 @@ public class ProductManager {
 		productDAO.updateProduct(product);
 	}
 	
-	public List<Product> findProductsByName(String product) {
-		return productDAO.findProductsByName(product);
+	public List<Product> findProducts(String product) {
+		return productDAO.findProducts(product);
 	}
 	
 	public List<Product> findProductsByCategory(String product, String category) {
