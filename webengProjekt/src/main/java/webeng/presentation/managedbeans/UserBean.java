@@ -40,7 +40,7 @@ public class UserBean implements Serializable {
 		return "/startseite.xhtml";
 	}
 	
-	public String logout(User user) {
+	public String logout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 		return "/startseite.xhtml";
 	}

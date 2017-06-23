@@ -28,6 +28,10 @@ public class TransactionBean implements Serializable {
 		return transaction;
 	}
 	
+	public String addTransaction() {
+		return "";
+	}
+	
 	@PostConstruct
 	public void init() {
 		manager = new TransactionManager();
