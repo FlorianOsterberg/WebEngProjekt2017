@@ -31,9 +31,9 @@ public class UserBean implements Serializable {
 		this.user = user;
 	}
 	
-	public String login(User user) {
+	public String login() {
 		if(manager.loginSucceeded(user)) {
-			
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", user);
 		} else {
 			
 		}
@@ -41,7 +41,13 @@ public class UserBean implements Serializable {
 	}
 	
 	public String logout(User user) {
-		return "";
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		return "/startseite.xhtml";
+	}
+	
+	public String registrieren() {
+		manager.addUser(user.getID(), user.getName(), user.getEmail(), user.getPasswort(), user.getSessionID());
+		return "/startseite.xhtml";
 	}
 	
 	@PostConstruct
