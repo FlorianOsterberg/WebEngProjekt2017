@@ -33,6 +33,10 @@ public class UserBean implements Serializable {
 		this.user = user;
 	}
 	
+	public boolean login(User user) {
+		return manager.loginSucceeded(user);
+	}
+	
 	@PostConstruct
 	public void init() {
 		
