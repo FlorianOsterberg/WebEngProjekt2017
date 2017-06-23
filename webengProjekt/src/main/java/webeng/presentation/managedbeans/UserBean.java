@@ -2,24 +2,22 @@ package webeng.presentation.managedbeans;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import webeng.businesslogic.UserManager;
 import webeng.transferobjects.User;
 
 @ManagedBean(name = "userBean")
-@RequestScoped
+@SessionScoped
 public class UserBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	UserManager manager;
-	User user;
+	private UserManager manager;
+	private User user;
 
 	public UserBean() {
 		
@@ -33,8 +31,17 @@ public class UserBean implements Serializable {
 		this.user = user;
 	}
 	
-	public boolean login(User user) {
-		return manager.loginSucceeded(user);
+	public String login(User user) {
+		if(manager.loginSucceeded(user)) {
+			
+		} else {
+			
+		}
+		return "/startseite.xhtml";
+	}
+	
+	public String logout(User user) {
+		return "";
 	}
 	
 	@PostConstruct

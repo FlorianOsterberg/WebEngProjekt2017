@@ -13,8 +13,8 @@ import webeng.transferobjects.Transaction;
 @RequestScoped
 public class TransactionBean implements Serializable {
 
-	Transaction transaction;
-	TransactionManager manager;
+	private Transaction transaction;
+	private TransactionManager manager;
 	
 	public TransactionBean() {
 		
