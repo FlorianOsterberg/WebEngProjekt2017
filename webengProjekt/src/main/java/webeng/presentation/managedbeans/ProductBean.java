@@ -22,6 +22,15 @@ public class ProductBean implements Serializable {
 	private Product product;
 	private ProductManager manager;
 	private List<Product> list;
+	private String search;
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
 
 	public ProductBean() {
 		
@@ -47,8 +56,8 @@ public class ProductBean implements Serializable {
 		this.list = list;
 	}
 	
-	public String getProducts(String product) {
-		list = manager.findProducts(product);
+	public String getProducts() {
+		list = manager.findProducts(search);
 		return "";
 	}
 	
